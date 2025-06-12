@@ -8,5 +8,6 @@ def safe_divide(numerator, denominator):
     except ZeroDivisionError:
         return "Error: Cannot divide by zero."
     else:
+        result = "The result of the division is " + str(result)
         return result
 
