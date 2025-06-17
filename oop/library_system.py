@@ -3,15 +3,24 @@ class Book:
         self.title = title
         self.author = author
 
+    def __str__(self):
+        return f"Book: {book.title} by {book.author}"
+
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
         self.file_size = file_size
 
+    def __str__(self):
+        return f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB"
+
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
         self.page_count = page_count
+
+    def __str__(self):
+        return f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}"
 
 class Library:
     def __init__(self):
@@ -22,10 +31,5 @@ class Library:
 
     def list_books(self):
         for book in self.book_list:
-            if isinstance(book, PrintBook):
-                print(f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}")
-            elif isinstance(book, EBook):
-                print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
-            elif isinstance(book, Book):
-                print(f"Book: {book.title} by {book.author}")
+            print (book)
 
